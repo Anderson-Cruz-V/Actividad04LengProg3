@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Activida3LengProg03.props" />
+</Project>

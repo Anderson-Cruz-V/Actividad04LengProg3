@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Activida3LengProg03/1.0.0": {
+        "runtime": {
+          "Activida3LengProg03.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Activida3LengProg03/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
