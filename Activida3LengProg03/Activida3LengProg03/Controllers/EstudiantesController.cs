@@ -5,7 +5,21 @@ namespace Activida3LengProg03.Controllers
 {
     public class EstudiantesController : Controller
     {
+        private List<EstudiantesViewModel> Estudiantes=new List<EstudiantesViewModel>();
+
+
+       public EstudiantesController() {
+        
+        }
+        [HttpGet]
+
         public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
+
+        public IActionResult Lista ()
         {
             return View();
         }

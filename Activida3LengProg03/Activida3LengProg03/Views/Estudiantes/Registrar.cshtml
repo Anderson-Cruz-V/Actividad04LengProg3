@@ -5,7 +5,7 @@
 
 <style>
     body {
-        background-image: url('/css/books-5937823.JPG');
+        background-image: url('/E.JPG');
         background-size: cover;
       
     }
@@ -87,8 +87,17 @@
         <label asp-for="TerminosYCondiciones">Acepto los términos y condiciones</label>
         <span asp-validation-for="TerminosYCondiciones" class="text-danger"></span>
     </div>
-    <button class="btn btn-success" type="submit">Crear</button>
+    <div class="row">
+        <div class="col-6">
+            <br />
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <a href="Lista" class="btn btn-secondary">Ir a la lista</a>
+        </div>
+    </div>
 </form>
+<div>
+
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
