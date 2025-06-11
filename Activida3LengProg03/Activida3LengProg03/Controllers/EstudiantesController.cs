@@ -10,10 +10,12 @@ namespace Activida3LengProg03.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Registrar ()
+        public IActionResult Registrar()
         {
+            ViewBag.Carreras = new List<string> { "Informática", "Contabilidad", "Administración" };
             return View();
         }
+
         [HttpPost]
         public IActionResult Registrar(EstudiantesViewModel model)
         {

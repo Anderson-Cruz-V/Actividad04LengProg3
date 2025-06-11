@@ -1,11 +1,17 @@
-﻿@model EstudiantesViewModel
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Activida3LengProg03.Models.EstudiantesViewModel
 @{
+    ViewData["Title"] = "Registrar Estudiantes";
 }
 
-<h2> Registrar Estudiantes </h2>
+<style>
+    body {
+        background-image: url('/css/books-5937823.JPG');
+        background-size: cover;
+      
+    }
+</style>
+
+<h2>Registrar Estudiantes</h2>
 
 <form asp-action="Registrar" method="post">
     <div>
@@ -16,47 +22,74 @@
     <div>
         <label asp-for="Matricula"></label>
         <input asp-for="Matricula" class="form-control" />
+        <span asp-validation-for="Matricula" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="Carrera"></label>
-        <input asp-for="Carrera" class="form-control" />
+        <select asp-for="Carrera" class="form-control" asp-items="@(new SelectList(ViewBag.Carreras))"></select>
+        <span asp-validation-for="Carrera" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="CorreoInstitucional"></label>
         <input asp-for="CorreoInstitucional" class="form-control" />
+        <span asp-validation-for="CorreoInstitucional" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="Telefono"></label>
         <input asp-for="Telefono" class="form-control" />
+        <span asp-validation-for="Telefono" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="FechaDeNacimiento"></label>
-        <input asp-for="FechaDeNacimiento" class="form-control" />
+        <input asp-for="FechaDeNacimiento" type="date" class="form-control" />
+        <span asp-validation-for="FechaDeNacimiento" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="Genero"></label>
-        <input asp-for="Genero" class="form-control" />
+        <div>
+            <input type="radio" asp-for="Genero" value="Masculino" /> Masculino
+            <input type="radio" asp-for="Genero" value="Femenino" /> Femenino
+            <input type="radio" asp-for="Genero" value="Otro" /> Otro
+        </div>
+        <span asp-validation-for="Genero" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="Turno"></label>
-        <input asp-for="Turno" class="form-control" />
+        <select asp-for="Turno" class="form-control">
+            <option value="">Seleccione</option>
+            <option>Mañana</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+        </select>
+        <span asp-validation-for="Turno" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="TipoDeIngreso"></label>
-        <input asp-for="TipoDeIngreso" class="form-control" />
+        <select asp-for="TipoDeIngreso" class="form-control">
+            <option value="">Seleccione</option>
+            <option>Nuevo Ingreso</option>
+            <option>Reingreso</option>
+        </select>
+        <span asp-validation-for="TipoDeIngreso" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="EstaBecado"></label>
-        <input asp-for="EstaBecado" class="form-control" />
+        <input asp-for="EstaBecado" type="checkbox" />
+        <span asp-validation-for="EstaBecado" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="PorcentajeDeBeca"></label>
-        <input asp-for="PorcentajeDeBeca" class="form-control" />
+        <input asp-for="PorcentajeDeBeca" class="form-control" type="number" min="0" max="100" />
+        <span asp-validation-for="PorcentajeDeBeca" class="text-danger"></span>
     </div>
     <div>
-        <label asp-for="TerminosYCondiciones"></label>
-        <input asp-for="TerminosYCondiciones" class="form-control" />
+        <input asp-for="TerminosYCondiciones" type="checkbox" />
+        <label asp-for="TerminosYCondiciones">Acepto los términos y condiciones</label>
+        <span asp-validation-for="TerminosYCondiciones" class="text-danger"></span>
     </div>
-    <button class="btn btn-success" type="submit">crear</button>
-
+    <button class="btn btn-success" type="submit">Crear</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

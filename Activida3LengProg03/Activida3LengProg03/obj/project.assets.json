@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eddy Cruz\\Desktop\\1.-Actividad-Pr-ctica\\Activida3LengProg03\\Activida3LengProg03\\Activida3LengProg03.csproj",
+      "projectUniqueName": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\Activida3LengProg03.csproj",
       "projectName": "Activida3LengProg03",
-      "projectPath": "C:\\Users\\Eddy Cruz\\Desktop\\1.-Actividad-Pr-ctica\\Activida3LengProg03\\Activida3LengProg03\\Activida3LengProg03.csproj",
+      "projectPath": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\Activida3LengProg03.csproj",
       "packagesPath": "C:\\Users\\Eddy Cruz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eddy Cruz\\Desktop\\1.-Actividad-Pr-ctica\\Activida3LengProg03\\Activida3LengProg03\\obj\\",
+      "outputPath": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
