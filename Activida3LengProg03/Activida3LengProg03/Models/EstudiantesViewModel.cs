@@ -51,5 +51,6 @@ namespace Activida3LengProg03.Models
         [Range(typeof(bool), "true", "true", ErrorMessage = "Debe aceptar los términos y condiciones")]
         [Display(Name = "Términos y condiciones")]
         public bool TerminosYCondiciones { get; set; }
+     
     }
 }

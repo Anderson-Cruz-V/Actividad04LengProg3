@@ -1,6 +1,6 @@
 ﻿@model Activida3LengProg03.Models.EstudiantesViewModel
 @{
-    ViewData["Title"] = "Registrar Estudiantes";
+    ViewData["Title"] = "Editar Estudiantes";
 }
 
 <style>
@@ -10,9 +10,9 @@
     }
 </style>
 
-<h2>Registrar Estudiantes</h2>
+<h2>Editar Estudiantes</h2>
 
-<form asp-action="Registrar" method="post">
+<form asp-action="Editar" method="post">
     <div>
         <label asp-for="NombreCompleto"></label>
         <input asp-for="NombreCompleto" class="form-control" />
@@ -20,7 +20,7 @@
     </div>
     <div>
         <label asp-for="Matricula"></label>
-        <input asp-for="Matricula" class="form-control" />
+        <input asp-for="Matricula" class="form-control" readonly />
         <span asp-validation-for="Matricula" class="text-danger"></span>
     </div>
     <div>
@@ -81,17 +81,15 @@
         <input asp-for="PorcentajeDeBeca" class="form-control" type="number" min="0" max="100" />
         <span asp-validation-for="PorcentajeDeBeca" class="text-danger"></span>
     </div>
-    <div class="form-check">
-        <input class="form-check-input" asp-for="TerminosYCondiciones" type="checkbox" />
-        <label class="form-check-label" asp-for="TerminosYCondiciones">
-            Acepto los términos y condiciones
-        </label>
+    <div>
+        <input asp-for="TerminosYCondiciones" type="checkbox" />
+        <label asp-for="TerminosYCondiciones">Acepto los términos y condiciones</label>
         <span asp-validation-for="TerminosYCondiciones" class="text-danger"></span>
     </div>
     <div class="row">
         <div class="col-6">
             <br />
-            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="submit" class="btn btn-primary">Editar</button>
             <a href="/Estudiantes/Lista" class="btn btn-secondary">Ir a la lista</a>
         </div>
     </div>
