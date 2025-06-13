@@ -11,50 +11,48 @@
 
 <h4>Lista de Estudiantes</h4>
 
-<div class="row">
-    <div class="col-12">
-        <table class="table table-hover">
-            <thead>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombre Completo</th>
+                <th>Matrícula</th>
+                <th>Carrera</th>
+                <th>Correo Institucional</th>
+                <th>Teléfono</th>
+                <th>Fecha de nacimiento</th>
+                <th>Género</th>
+                <th>Turno</th>
+                <th>Tipo de ingreso</th>
+                <th>Beca</th>
+                <th>% Beca</th>
+                <th>Términos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var it in Model)
+            {
                 <tr>
-                    <th>Nombre Completo</th>
-                    <th>Matrícula</th>
-                    <th>Carrera</th>
-                    <th>Correo Institucional</th>
-                    <th>Teléfono</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Género</th>
-                    <th>Turno</th>
-                    <th>Tipo de Ingreso</th>
-                    <th>Beca</th>
-                    <th>% Beca</th>
-                    <th>Términos</th>
-                    <th></th>
+                    <td>@it.NombreCompleto</td>
+                    <td>@it.Matricula</td>
+                    <td>@it.Carrera</td>
+                    <td>@it.CorreoInstitucional</td>
+                    <td>@it.Telefono</td>
+                    <td>@it.FechaDeNacimiento?.ToString("dd/MM/yyyy")</td>
+                    <td>@it.Genero</td>
+                    <td>@it.Turno</td>
+                    <td>@it.TipoDeIngreso</td>
+                    <td>@(it.EstaBecado ? "Sí" : "No")</td>
+                    <td>@it.PorcentajeDeBeca</td>
+                    <td>@(it.TerminosYCondiciones ? "Sí" : "No")</td>
+                    <td>
+                        <a href="@Url.Action("Editar", "Estudiantes", new { id = it.Matricula })" class="btn btn-primary btn-sm me-2">Editar</a>
+                        <a href="@Url.Action("Eliminar", "Estudiantes", new { matricula = it.Matricula })" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var it in Model)
-                {
-                    <tr>
-                        <td>@it.NombreCompleto</td>
-                        <td>@it.Matricula</td>
-                        <td>@it.Carrera</td>
-                        <td>@it.CorreoInstitucional</td>
-                        <td>@it.Telefono</td>
-                        <td>@it.FechaDeNacimiento?.ToString("dd/MM/yyyy")</td>
-                        <td>@it.Genero</td>
-                        <td>@it.Turno</td>
-                        <td>@it.TipoDeIngreso</td>
-                        <td>@(it.EstaBecado ? "Sí" : "No")</td>
-                        <td>@it.PorcentajeDeBeca</td>
-                        <td>@(it.TerminosYCondiciones ? "Sí" : "No")</td>
-                        <td>
-                            <a href="/Estudiantes/Editar/@it.Matricula" class="btn btn-secondary">Editar</a>
-                            <a href="/Estudiantes/Eliminar/@it.Matricula" class="btn btn-danger">Eliminar</a>
-
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
 </div>
+

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Activida3LengProg03")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbaf6fec08fb1c0657b9a558c3ff52b4da593361")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fb48bc4ee727adf25305be44c7b00d81d870f60")]
 [assembly: System.Reflection.AssemblyProductAttribute("Activida3LengProg03")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Activida3LengProg03")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

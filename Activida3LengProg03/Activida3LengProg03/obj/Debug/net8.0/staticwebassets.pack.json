@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Activida3LengProg03.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\wwwroot\\Ander.jpg",
+      "PackagePath": "staticwebassets\\Ander.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\wwwroot\\css\\Ander.jpg",
+      "PackagePath": "staticwebassets\\css\\Ander.jpg"
+    },
+    {
       "Id": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\wwwroot\\css\\E.jpg",
       "PackagePath": "staticwebassets\\css\\E.jpg"
     },
@@ -19,6 +27,10 @@
     {
       "Id": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\wwwroot\\imagen\\s.jpg",
+      "PackagePath": "staticwebassets\\imagen\\s.jpg"
     },
     {
       "Id": "C:\\Users\\Eddy Cruz\\Desktop\\Actividad03LengProg3\\Activida3LengProg03\\Activida3LengProg03\\wwwroot\\js\\site.js",

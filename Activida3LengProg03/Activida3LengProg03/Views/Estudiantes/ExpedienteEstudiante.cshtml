@@ -1,0 +1,52 @@
+﻿@model Activida3LengProg03.Models.EstudiantesViewModel
+
+<h2>Expediente del Estudiante</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Matrícula</th>
+        <td>@Model.Matricula</td>
+    </tr>
+    <tr>
+        <th>Nombre Completo</th>
+        <td>@Model.NombreCompleto</td>
+    </tr>
+    <tr>
+        <th>Carrera</th>
+        <td>@Model.Carrera</td>
+    </tr>
+    <tr>
+        <th>Correo Institucional</th>
+        <td>@Model.CorreoInstitucional</td>
+    </tr>
+    <tr>
+        <th>Teléfono</th>
+        <td>@Model.Telefono</td>
+    </tr>
+    <tr>
+        <th>Fecha de Nacimiento</th>
+        <td>@Model.FechaDeNacimiento?.ToString("dd/MM/yyyy")</td>
+    </tr>
+    <tr>
+        <th>Género</th>
+        <td>@Model.Genero</td>
+    </tr>
+    <tr>
+        <th>Turno</th>
+        <td>@Model.Turno</td>
+    </tr>
+    <tr>
+        <th>Tipo de Ingreso</th>
+        <td>@Model.TipoDeIngreso</td>
+    </tr>
+    <tr>
+        <th>Está Becado</th>
+        <td>@(Model.EstaBecado ? "Sí" : "No")</td>
+    </tr>
+    <tr>
+        <th>Porcentaje de Beca</th>
+        <td>@Model.PorcentajeDeBeca %</td>
+    </tr>
+</table>
+
+<a href="@Url.Action("Lista", "Estudiantes")" class="btn btn-primary">Volver a la Lista</a>

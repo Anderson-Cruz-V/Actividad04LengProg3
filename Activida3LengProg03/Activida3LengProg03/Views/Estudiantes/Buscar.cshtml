@@ -1,0 +1,20 @@
+﻿
+
+@{
+    ViewData["Title"] = "Buscar Estudiante";
+}
+
+<h2>Buscar Estudiante por Matrícula</h2>
+
+@if (TempData["MensajeError"] != null)
+{
+    <div class="alert alert-danger">@TempData["MensajeError"]</div>
+}
+
+<form asp-action="Buscar" method="post">
+    <div class="form-group">
+        <label for="matricula">Matrícula:</label>
+        <input type="text" class="form-control" name="matricula" id="matricula" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+</form>

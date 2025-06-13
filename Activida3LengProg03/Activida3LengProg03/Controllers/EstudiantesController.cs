@@ -58,17 +58,17 @@ namespace Activida3LengProg03.Controllers
             return View(model);
         }
 
-   
+
         [HttpGet]
-        public IActionResult Editar(string id)
+        public IActionResult Editar(string matricula)
         {
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(matricula))
             {
                 TempData["MensajeError"] = "La matrícula pasada no existe.";
                 return RedirectToAction("Lista");
             }
 
-            var estudianteActual = estudiantes.FirstOrDefault(e => e.Matricula == id);
+            var estudianteActual = estudiantes.FirstOrDefault(e => e.Matricula == matricula);
 
             if (estudianteActual == null)
             {
@@ -80,7 +80,35 @@ namespace Activida3LengProg03.Controllers
             return View(estudianteActual);
         }
 
-        
+        [HttpGet]
+        public IActionResult Buscar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Buscar(string matricula)
+        {
+            if (string.IsNullOrEmpty(matricula))
+            {
+                TempData["MensajeError"] = "Debes ingresar una matrícula.";
+                return View();
+            }
+
+            var estudiante = estudiantes.FirstOrDefault(e => e.Matricula.Equals(matricula, StringComparison.OrdinalIgnoreCase));
+            if (estudiante == null)
+            {
+                TempData["MensajeError"] = "No se encontró ningún estudiante con esa matrícula.";
+                return View();
+            }
+
+            return View("ExpedienteEstudiante", estudiante);
+
+        }
+
+
+
+
         [HttpPost]
         public IActionResult Editar(EstudiantesViewModel model)
         {
