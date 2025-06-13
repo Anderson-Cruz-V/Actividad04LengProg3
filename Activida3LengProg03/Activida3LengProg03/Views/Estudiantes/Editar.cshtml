@@ -1,16 +1,15 @@
 ﻿@model Activida3LengProg03.Models.EstudiantesViewModel
-@{
-    ViewData["Title"] = "Editar Estudiantes";
+
+<h2>Editar Estudiante</h2>
+
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">@TempData["Mensaje"]</div>
 }
-
-<style>
-    body {
-        background-image: url('/E.JPG');
-        background-size: cover;
-    }
-</style>
-
-<h2>Editar Estudiantes</h2>
+@if (TempData["MensajeError"] != null)
+{
+    <div class="alert alert-danger">@TempData["MensajeError"]</div>
+}
 
 <form asp-action="Editar" method="post">
     <div>
@@ -90,7 +89,7 @@
         <div class="col-6">
             <br />
             <button type="submit" class="btn btn-primary">Editar</button>
-            <a href="/Estudiantes/Lista" class="btn btn-secondary">Ir a la lista</a>
+            <a href="@Url.Action("Lista", "Estudiantes")" class="btn btn-secondary">Ir a la lista</a>
         </div>
     </div>
 </form>
