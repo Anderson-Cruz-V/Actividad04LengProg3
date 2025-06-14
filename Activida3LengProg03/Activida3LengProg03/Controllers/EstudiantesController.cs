@@ -141,25 +141,23 @@ namespace Activida3LengProg03.Controllers
             return View(model);
         }
 
-        
         [HttpGet]
-        public IActionResult Eliminar(string id)
+        public IActionResult Eliminar(string matricula)
         {
-            var estudiante = estudiantes.FirstOrDefault(e => e.Matricula == id);
+            var estudiante = estudiantes.FirstOrDefault(e => e.Matricula == matricula);
             if (estudiante == null)
             {
                 TempData["MensajeError"] = "El estudiante no existe.";
                 return RedirectToAction("Lista");
             }
-            ViewBag.Carreras = new List<string> { "Informática", "Contabilidad", "Administración" };
             return View(estudiante);
         }
 
-       
-        [HttpPost]
-        public IActionResult Eliminar(EstudiantesViewModel model)
+        // Este método es el que realmente elimina, pero lo llamas también "Eliminar" desde el formulario
+        [HttpPost, ActionName("Eliminar")]
+        public IActionResult EliminarConfirmado(string matricula)
         {
-            var estudiante = estudiantes.FirstOrDefault(e => e.Matricula == model.Matricula);
+            var estudiante = estudiantes.FirstOrDefault(e => e.Matricula == matricula);
             if (estudiante == null)
             {
                 TempData["MensajeError"] = "El estudiante no existe.";
@@ -169,5 +167,7 @@ namespace Activida3LengProg03.Controllers
             TempData["Mensaje"] = "Estudiante eliminado correctamente.";
             return RedirectToAction("Lista");
         }
+
+
     }
 }

@@ -1,100 +1,13 @@
-﻿
-@model Activida3LengProg03.Models.EstudiantesViewModel
+﻿@model Activida3LengProg03.Models.EstudiantesViewModel
 
 <h2>Eliminar Estudiante</h2>
 
-@if (TempData["Mensaje"] != null)
-{
-    <div class="alert alert-success">@TempData["Mensaje"]</div>
-}
-@if (TempData["MensajeError"] != null)
-{
-    <div class="alert alert-danger">@TempData["MensajeError"]</div>
-}
+<div class="alert alert-warning">
+    ¿Estás seguro de eliminar al estudiante <strong>@Model.NombreCompleto</strong> con matrícula <strong>@Model.Matricula</strong>?
+</div>
 
 <form asp-action="Eliminar" method="post">
-    <div>
-        <label asp-for="NombreCompleto"></label>
-        <input asp-for="NombreCompleto" class="form-control" />
-        <span asp-validation-for="NombreCompleto" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Matricula"></label>
-        <input asp-for="Matricula" class="form-control" readonly />
-        <span asp-validation-for="Matricula" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Carrera"></label>
-        <select asp-for="Carrera" class="form-control" asp-items="@(new SelectList(ViewBag.Carreras))"></select>
-        <span asp-validation-for="Carrera" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="CorreoInstitucional"></label>
-        <input asp-for="CorreoInstitucional" class="form-control" />
-        <span asp-validation-for="CorreoInstitucional" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Telefono"></label>
-        <input asp-for="Telefono" class="form-control" />
-        <span asp-validation-for="Telefono" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="FechaDeNacimiento"></label>
-        <input asp-for="FechaDeNacimiento" type="date" class="form-control" />
-        <span asp-validation-for="FechaDeNacimiento" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Genero"></label>
-        <div>
-            <input type="radio" asp-for="Genero" value="Masculino" /> Masculino
-            <input type="radio" asp-for="Genero" value="Femenino" /> Femenino
-            <input type="radio" asp-for="Genero" value="Otro" /> Otro
-        </div>
-        <span asp-validation-for="Genero" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Turno"></label>
-        <select asp-for="Turno" class="form-control">
-            <option value="">Seleccione</option>
-            <option>Mañana</option>
-            <option>Tarde</option>
-            <option>Noche</option>
-        </select>
-        <span asp-validation-for="Turno" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="TipoDeIngreso"></label>
-        <select asp-for="TipoDeIngreso" class="form-control">
-            <option value="">Seleccione</option>
-            <option>Nuevo Ingreso</option>
-            <option>Reingreso</option>
-        </select>
-        <span asp-validation-for="TipoDeIngreso" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="EstaBecado"></label>
-        <input asp-for="EstaBecado" type="checkbox" />
-        <span asp-validation-for="EstaBecado" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="PorcentajeDeBeca"></label>
-        <input asp-for="PorcentajeDeBeca" class="form-control" type="number" min="0" max="100" />
-        <span asp-validation-for="PorcentajeDeBeca" class="text-danger"></span>
-    </div>
-    <div>
-        <input asp-for="TerminosYCondiciones" type="checkbox" />
-        <label asp-for="TerminosYCondiciones">Acepto los términos y condiciones</label>
-        <span asp-validation-for="TerminosYCondiciones" class="text-danger"></span>
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <br />
-            <button type="submit" class="btn btn-primary">Eliminar</button>
-            <a href="@Url.Action("Lista", "Estudiantes")" class="btn btn-secondary">Ir a la lista</a>
-        </div>
-    </div>
+    <input type="hidden" name="matricula" value="@Model.Matricula" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="@Url.Action("Lista", "Estudiantes")" class="btn btn-secondary">Cancelar</a>
 </form>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
