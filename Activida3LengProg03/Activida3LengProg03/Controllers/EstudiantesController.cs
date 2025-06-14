@@ -153,7 +153,7 @@ namespace Activida3LengProg03.Controllers
             return View(estudiante);
         }
 
-        // Este método es el que realmente elimina, pero lo llamas también "Eliminar" desde el formulario
+       
         [HttpPost, ActionName("Eliminar")]
         public IActionResult EliminarConfirmado(string matricula)
         {
