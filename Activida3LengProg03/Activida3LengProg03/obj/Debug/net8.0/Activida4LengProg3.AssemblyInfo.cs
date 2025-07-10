@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Activida3LengProg03")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Activida4LengProg3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73eead45898e83195643ac9369681378d52851fe")]
-[assembly: System.Reflection.AssemblyProductAttribute("Activida3LengProg03")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Activida3LengProg03")]
+[assembly: System.Reflection.AssemblyProductAttribute("Activida4LengProg3")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Activida4LengProg3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

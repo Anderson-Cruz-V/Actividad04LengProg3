@@ -1,8 +1,8 @@
-using Activida3LengProg03.Models;
+using Activida4LengProg3.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Activida3LengProg03.Controllers
+namespace Activida4LengProg3.Controllers
 {
     public class HomeController : Controller
     {

@@ -7,8 +7,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = Activida3LengProg03
-build_property.RootNamespace = Activida3LengProg03
+build_property.RootNamespace = Activida4LengProg3
+build_property.RootNamespace = Activida4LengProg3
 build_property.ProjectDir = C:\Users\Eddy Cruz\Desktop\Actividad04LengProg3\Activida3LengProg03\Activida3LengProg03\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
@@ -68,4 +68,4 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-4exepc829h
+build_metadata.AdditionalFiles.CssScope = b-tki2uwcypt

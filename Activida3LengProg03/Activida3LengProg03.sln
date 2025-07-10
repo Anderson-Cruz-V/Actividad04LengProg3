@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Activida3LengProg03", "Activida3LengProg03\Activida3LengProg03.csproj", "{E1AF5898-30CD-42BA-A10E-64C543B87E16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Activida4LengProg3", "Activida3LengProg03\Activida4LengProg3.csproj", "{E1AF5898-30CD-42BA-A10E-64C543B87E16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

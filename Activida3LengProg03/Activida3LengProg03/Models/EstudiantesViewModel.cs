@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Activida3LengProg03.Models
+namespace Activida4LengProg3.Models
 {
     public class EstudiantesViewModel
     {
