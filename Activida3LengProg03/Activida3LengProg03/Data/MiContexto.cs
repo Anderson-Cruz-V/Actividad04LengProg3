@@ -11,5 +11,6 @@ namespace Actividad4LengProg3.Data
         }
 
         public DbSet<Estudiante> Estudiantes { get; set; } = null!;
+        public DbSet<Materia> Materias { get; set; } = null!;
     }
 }
