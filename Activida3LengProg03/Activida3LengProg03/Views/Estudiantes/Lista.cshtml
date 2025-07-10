@@ -1,4 +1,4 @@
-﻿@model List<Activida4LengProg3.Models.EstudiantesViewModel>
+﻿@model IEnumerable<Actividad4LengProg3.Models.Estudiante>
 
 @if (TempData["MensajeError"] != null)
 {
@@ -39,22 +39,19 @@
                     <td>@it.Carrera</td>
                     <td>@it.CorreoInstitucional</td>
                     <td>@it.Telefono</td>
-                    <td>@it.FechaDeNacimiento?.ToString("dd/MM/yyyy")</td>
+                    <td>@it.FechaNacimiento.ToString("dd/MM/yyyy")</td>
                     <td>@it.Genero</td>
                     <td>@it.Turno</td>
-                    <td>@it.TipoDeIngreso</td>
+                    <td>@it.TipoIngreso</td>
                     <td>@(it.EstaBecado ? "Sí" : "No")</td>
-                    <td>@it.PorcentajeDeBeca</td>
+                    <td>@it.PorcentajeBeca</td>
                     <td>@(it.TerminosYCondiciones ? "Sí" : "No")</td>
                     <td>
-                        <a href="@Url.Action("Editar", "Estudiantes", new { matricula = it.Matricula })" class="btn btn-primary btn-sm me-2">Editar</a>
-                        <a href="@Url.Action("Eliminar", "Estudiantes", new { matricula = it.Matricula })" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a asp-action="Editar" asp-route-matricula="@it.Matricula" class="btn btn-primary btn-sm me-2">Editar</a>
+                        <a asp-action="Eliminar" asp-route-matricula="@it.Matricula" class="btn btn-danger btn-sm">Eliminar</a>
                     </td>
-
-
                 </tr>
             }
         </tbody>
     </table>
 </div>
-

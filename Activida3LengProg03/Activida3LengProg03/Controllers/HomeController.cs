@@ -1,8 +1,8 @@
-using Activida4LengProg3.Models;
+using Actividad4LengProg3.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Activida4LengProg3.Controllers
+namespace Actividad4LengProg3.Controllers
 {
     public class HomeController : Controller
     {
@@ -26,7 +26,10 @@ namespace Activida4LengProg3.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            });
         }
     }
 }

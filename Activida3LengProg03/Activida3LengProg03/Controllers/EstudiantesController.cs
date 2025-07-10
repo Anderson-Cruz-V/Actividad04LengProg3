@@ -1,83 +1,103 @@
-﻿using Activida4LengProg3.Models;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Actividad4LengProg3.Data;
+using Actividad4LengProg3.Models;
 
-namespace Activida4LengProg3.Controllers
+namespace Actividad4LengProg3.Controllers
 {
     public class EstudiantesController : Controller
     {
-        private static List<EstudiantesViewModel> estudiantes = new List<EstudiantesViewModel>
-        {
-            new EstudiantesViewModel
-            {
-                NombreCompleto = "Anderson Cruz",
-                Matricula = "sd-2022-04079",
-                Carrera = "Informática",
-                CorreoInstitucional = "sd-2022-04079@ufhec.edu.do",
-                Telefono = "809-555-5555",
-                FechaDeNacimiento = new DateTime(2000, 1, 1),
-                Genero = "Masculino",
-                Turno = "Mañana",
-                TipoDeIngreso = "Nuevo Ingreso",
-                EstaBecado = true,
-                PorcentajeDeBeca = 80,
-                TerminosYCondiciones = true
-            }
-        };
+        private readonly MiContexto _context;
 
-        [HttpGet]
-        public IActionResult Index()
+        public EstudiantesController(MiContexto context)
         {
-            return View();
+            _context = context;
         }
 
-      
         [HttpGet]
         public IActionResult Lista()
         {
-            return View(estudiantes);
+            var lista = _context.Estudiantes
+                                .AsNoTracking()
+                                .ToList();
+            return View(lista);
         }
 
-      
         [HttpGet]
         public IActionResult Registrar()
         {
-            ViewBag.Carreras = new List<string> { "Informática", "Contabilidad", "Administración" };
+            ViewBag.Carreras = new[] { "Informática", "Contabilidad", "Administración" };
             return View();
         }
 
         [HttpPost]
-        public IActionResult Registrar(EstudiantesViewModel model)
+        public IActionResult Registrar(Estudiante model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                estudiantes.Add(model);
-                TempData["Mensaje"] = "Estudiante registrado correctamente.";
-                return RedirectToAction("Lista");
+                ViewBag.Carreras = new[] { "Informática", "Contabilidad", "Administración" };
+                return View(model);
             }
-            ViewBag.Carreras = new List<string> { "Informática", "Contabilidad", "Administración" };
-            return View(model);
-        }
 
+            _context.Estudiantes.Add(model);
+            _context.SaveChanges();
+            TempData["Mensaje"] = "Estudiante registrado correctamente.";
+            return RedirectToAction(nameof(Lista));
+        }
 
         [HttpGet]
         public IActionResult Editar(string matricula)
         {
-            if (string.IsNullOrEmpty(matricula))
+            var est = _context.Estudiantes
+                              .AsNoTracking()
+                              .FirstOrDefault(e => e.Matricula == matricula);
+            if (est == null)
+                return RedirectToAction(nameof(Lista));
+
+            ViewBag.Carreras = new[] { "Informática", "Contabilidad", "Administración" };
+            return View(est);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(Estudiante model)
+        {
+            if (!ModelState.IsValid)
             {
-                TempData["MensajeError"] = "La matrícula pasada no existe.";
-                return RedirectToAction("Lista");
+                ViewBag.Carreras = new[] { "Informática", "Contabilidad", "Administración" };
+                return View(model);
             }
 
-            var estudianteActual = estudiantes.FirstOrDefault(e => e.Matricula == matricula);
+            _context.Estudiantes.Update(model);
+            _context.SaveChanges();
+            TempData["Mensaje"] = "Estudiante editado correctamente.";
+            return RedirectToAction(nameof(Lista));
+        }
 
-            if (estudianteActual == null)
+        [HttpGet]
+        public IActionResult Eliminar(string matricula)
+        {
+            var est = _context.Estudiantes
+                              .AsNoTracking()
+                              .FirstOrDefault(e => e.Matricula == matricula);
+            if (est == null)
+                return RedirectToAction(nameof(Lista));
+
+            return View(est);
+        }
+
+        [HttpPost, ActionName("Eliminar")]
+        public IActionResult EliminarConfirmado(string matricula)
+        {
+            var est = _context.Estudiantes
+                              .FirstOrDefault(e => e.Matricula == matricula);
+            if (est != null)
             {
-                TempData["MensajeError"] = "No existe el estudiante indicado";
-                return RedirectToAction("Lista");
+                _context.Estudiantes.Remove(est);
+                _context.SaveChanges();
+                TempData["Mensaje"] = "Estudiante eliminado correctamente.";
             }
-
-            ViewBag.Carreras = new List<string> { "Informática", "Contabilidad", "Administración" };
-            return View(estudianteActual);
+            return RedirectToAction(nameof(Lista));
         }
 
         [HttpGet]
@@ -89,85 +109,21 @@ namespace Activida4LengProg3.Controllers
         [HttpPost]
         public IActionResult Buscar(string matricula)
         {
-            if (string.IsNullOrEmpty(matricula))
+            if (string.IsNullOrWhiteSpace(matricula))
             {
                 TempData["MensajeError"] = "Debes ingresar una matrícula.";
                 return View();
             }
 
-            var estudiante = estudiantes.FirstOrDefault(e => e.Matricula.Equals(matricula, StringComparison.OrdinalIgnoreCase));
-            if (estudiante == null)
+            var est = _context.Estudiantes
+                              .AsNoTracking()
+                              .FirstOrDefault(e => e.Matricula == matricula);
+            if (est == null)
             {
                 TempData["MensajeError"] = "No se encontró ningún estudiante con esa matrícula.";
                 return View();
             }
-
-            return View("ExpedienteEstudiante", estudiante);
-
+            return View("ExpedienteEstudiante", est);
         }
-
-
-
-
-        [HttpPost]
-        public IActionResult Editar(EstudiantesViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var estudianteActual = estudiantes.FirstOrDefault(e => e.Matricula == model.Matricula);
-
-                if (estudianteActual == null)
-                {
-                    TempData["MensajeError"] = "No existe el estudiante indicado";
-                    return RedirectToAction("Lista");
-                }
-
-                estudianteActual.NombreCompleto = model.NombreCompleto;
-                estudianteActual.Carrera = model.Carrera;
-                estudianteActual.CorreoInstitucional = model.CorreoInstitucional;
-                estudianteActual.Telefono = model.Telefono;
-                estudianteActual.FechaDeNacimiento = model.FechaDeNacimiento;
-                estudianteActual.Genero = model.Genero;
-                estudianteActual.Turno = model.Turno;
-                estudianteActual.TipoDeIngreso = model.TipoDeIngreso;
-                estudianteActual.EstaBecado = model.EstaBecado;
-                estudianteActual.PorcentajeDeBeca = model.PorcentajeDeBeca;
-                estudianteActual.TerminosYCondiciones = model.TerminosYCondiciones;
-
-                TempData["Mensaje"] = "Estudiante editado correctamente.";
-                return RedirectToAction("Lista");
-            }
-            ViewBag.Carreras = new List<string> { "Informática", "Contabilidad", "Administración" };
-            return View(model);
-        }
-
-        [HttpGet]
-        public IActionResult Eliminar(string matricula)
-        {
-            var estudiante = estudiantes.FirstOrDefault(e => e.Matricula == matricula);
-            if (estudiante == null)
-            {
-                TempData["MensajeError"] = "El estudiante no existe.";
-                return RedirectToAction("Lista");
-            }
-            return View(estudiante);
-        }
-
-       
-        [HttpPost, ActionName("Eliminar")]
-        public IActionResult EliminarConfirmado(string matricula)
-        {
-            var estudiante = estudiantes.FirstOrDefault(e => e.Matricula == matricula);
-            if (estudiante == null)
-            {
-                TempData["MensajeError"] = "El estudiante no existe.";
-                return RedirectToAction("Lista");
-            }
-            estudiantes.Remove(estudiante);
-            TempData["Mensaje"] = "Estudiante eliminado correctamente.";
-            return RedirectToAction("Lista");
-        }
-
-
     }
 }

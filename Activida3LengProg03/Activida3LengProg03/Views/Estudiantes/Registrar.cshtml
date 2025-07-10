@@ -1,4 +1,4 @@
-﻿@model Activida4LengProg3.Models.EstudiantesViewModel
+﻿@model Actividad4LengProg3.Models.Estudiante
 
 <h2>Registro de Estudiante</h2>
 
@@ -13,37 +13,31 @@
         <input asp-for="NombreCompleto" class="form-control" />
         <span asp-validation-for="NombreCompleto" class="text-danger"></span>
     </div>
-
     <div>
         <label asp-for="Matricula"></label>
         <input asp-for="Matricula" class="form-control" />
         <span asp-validation-for="Matricula" class="text-danger"></span>
     </div>
-
     <div>
         <label asp-for="Carrera"></label>
         <select asp-for="Carrera" class="form-control" asp-items="@(new SelectList(ViewBag.Carreras))"></select>
         <span asp-validation-for="Carrera" class="text-danger"></span>
     </div>
-
     <div>
         <label asp-for="CorreoInstitucional"></label>
         <input asp-for="CorreoInstitucional" class="form-control" />
         <span asp-validation-for="CorreoInstitucional" class="text-danger"></span>
     </div>
-
     <div>
         <label asp-for="Telefono"></label>
         <input asp-for="Telefono" class="form-control" />
         <span asp-validation-for="Telefono" class="text-danger"></span>
     </div>
-
     <div>
-        <label asp-for="FechaDeNacimiento"></label>
-        <input asp-for="FechaDeNacimiento" type="date" class="form-control" />
-        <span asp-validation-for="FechaDeNacimiento" class="text-danger"></span>
+        <label asp-for="FechaNacimiento"></label>
+        <input asp-for="FechaNacimiento" type="date" class="form-control" />
+        <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
     </div>
-
     <div>
         <label asp-for="Genero"></label>
         <div>
@@ -53,7 +47,6 @@
         </div>
         <span asp-validation-for="Genero" class="text-danger"></span>
     </div>
-
     <div>
         <label asp-for="Turno"></label>
         <select asp-for="Turno" class="form-control">
@@ -64,40 +57,35 @@
         </select>
         <span asp-validation-for="Turno" class="text-danger"></span>
     </div>
-
     <div>
-        <label asp-for="TipoDeIngreso"></label>
-        <select asp-for="TipoDeIngreso" class="form-control">
+        <label asp-for="TipoIngreso"></label>
+        <select asp-for="TipoIngreso" class="form-control">
             <option value="">Seleccione</option>
             <option>Nuevo Ingreso</option>
             <option>Reingreso</option>
         </select>
-        <span asp-validation-for="TipoDeIngreso" class="text-danger"></span>
+        <span asp-validation-for="TipoIngreso" class="text-danger"></span>
     </div>
-
     <div>
         <label asp-for="EstaBecado"></label>
         <input asp-for="EstaBecado" type="checkbox" />
         <span asp-validation-for="EstaBecado" class="text-danger"></span>
     </div>
-
     <div>
-        <label asp-for="PorcentajeDeBeca"></label>
-        <input asp-for="PorcentajeDeBeca" class="form-control" type="number" min="0" max="100" />
-        <span asp-validation-for="PorcentajeDeBeca" class="text-danger"></span>
+        <label asp-for="PorcentajeBeca"></label>
+        <input asp-for="PorcentajeBeca" class="form-control" type="number" min="0" max="100" />
+        <span asp-validation-for="PorcentajeBeca" class="text-danger"></span>
     </div>
-
     <div>
         <input asp-for="TerminosYCondiciones" type="checkbox" />
         <label asp-for="TerminosYCondiciones">Acepto los términos y condiciones</label>
         <span asp-validation-for="TerminosYCondiciones" class="text-danger"></span>
     </div>
-
     <div class="row">
         <div class="col-6">
             <br />
             <button type="submit" class="btn btn-primary">Registrar</button>
-            <a href="/Estudiantes/Lista" class="btn btn-secondary">Ir a la lista</a>
+            <a asp-action="Lista" class="btn btn-secondary">Ir a la lista</a>
         </div>
     </div>
 </form>

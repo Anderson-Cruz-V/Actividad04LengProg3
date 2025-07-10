@@ -1,4 +1,4 @@
-﻿@model Activida4LengProg3.Models.EstudiantesViewModel
+﻿@model Actividad4LengProg3.Models.Estudiante
 
 <h2>Expediente del Estudiante</h2>
 
@@ -25,7 +25,7 @@
     </tr>
     <tr>
         <th>Fecha de Nacimiento</th>
-        <td>@Model.FechaDeNacimiento?.ToString("dd/MM/yyyy")</td>
+        <td>@Model.FechaNacimiento.ToString("dd/MM/yyyy")</td>
     </tr>
     <tr>
         <th>Género</th>
@@ -37,7 +37,7 @@
     </tr>
     <tr>
         <th>Tipo de Ingreso</th>
-        <td>@Model.TipoDeIngreso</td>
+        <td>@Model.TipoIngreso</td>
     </tr>
     <tr>
         <th>Está Becado</th>
@@ -45,8 +45,8 @@
     </tr>
     <tr>
         <th>Porcentaje de Beca</th>
-        <td>@Model.PorcentajeDeBeca %</td>
+        <td>@Model.PorcentajeBeca %</td>
     </tr>
 </table>
 
-<a href="@Url.Action("Lista", "Estudiantes")" class="btn btn-primary">Volver a la Lista</a>
+<a asp-action="Lista" class="btn btn-primary">Volver a la Lista</a>
