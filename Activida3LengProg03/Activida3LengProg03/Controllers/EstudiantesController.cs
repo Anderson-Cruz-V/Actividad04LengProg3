@@ -59,20 +59,36 @@ namespace Actividad4LengProg3.Controllers
             return View(est);
         }
 
-        [HttpPost]
-        public IActionResult Editar(Estudiante model)
-        {
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Carreras = new[] { "Informática", "Contabilidad", "Administración" };
-                return View(model);
-            }
+       [HttpPost]
+public IActionResult Editar(Estudiante model)
+{
+    if (!ModelState.IsValid)
+    {
+        ViewBag.Carreras = new[] { "Informática", "Contabilidad", "Administración" };
+        return View(model);
+    }
 
-            _context.Estudiantes.Update(model);
-            _context.SaveChanges();
-            TempData["Mensaje"] = "Estudiante editado correctamente.";
-            return RedirectToAction(nameof(Lista));
-        }
+    var entidad = _context.Estudiantes.Find(model.Id);
+    if (entidad == null)
+        return RedirectToAction(nameof(Lista));
+
+    entidad.NombreCompleto       = model.NombreCompleto;
+    entidad.CorreoInstitucional  = model.CorreoInstitucional;
+    entidad.Carrera              = model.Carrera;
+    entidad.Telefono             = model.Telefono;
+    entidad.FechaNacimiento      = model.FechaNacimiento;
+    entidad.Genero               = model.Genero;
+    entidad.Turno                = model.Turno;
+    entidad.TipoIngreso          = model.TipoIngreso;
+    entidad.EstaBecado           = model.EstaBecado;
+    entidad.PorcentajeBeca       = model.PorcentajeBeca;
+    entidad.TerminosYCondiciones = model.TerminosYCondiciones;
+
+    _context.SaveChanges();
+    TempData["Mensaje"] = "Estudiante editado correctamente.";
+    return RedirectToAction(nameof(Lista));
+}
+
 
         [HttpGet]
         public IActionResult Eliminar(string matricula)

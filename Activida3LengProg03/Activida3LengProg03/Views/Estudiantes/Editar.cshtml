@@ -2,58 +2,56 @@
 
 <h2>Editar Estudiante</h2>
 
-@if (TempData["Mensaje"] != null)
-{
-    <div class="alert alert-success">@TempData["Mensaje"]</div>
-}
-@if (TempData["MensajeError"] != null)
-{
-    <div class="alert alert-danger">@TempData["MensajeError"]</div>
-}
-
 <form asp-action="Editar" method="post">
-    <div>
-        <label asp-for="NombreCompleto"></label>
+    @* 1) Campo oculto para el Id *@
+    <input asp-for="Id" type="hidden" />
+
+    <div class="mb-3">
+        <label asp-for="NombreCompleto" class="form-label"></label>
         <input asp-for="NombreCompleto" class="form-control" />
         <span asp-validation-for="NombreCompleto" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="Matricula"></label>
+
+    <div class="mb-3">
+        <label asp-for="Matricula" class="form-label"></label>
         <input asp-for="Matricula" class="form-control" readonly />
-        <span asp-validation-for="Matricula" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="Carrera"></label>
-        <select asp-for="Carrera" class="form-control" asp-items="@(new SelectList(ViewBag.Carreras))"></select>
+
+    <div class="mb-3">
+        <label asp-for="Carrera" class="form-label"></label>
+        <select asp-for="Carrera" class="form-select" asp-items="@(new SelectList(ViewBag.Carreras))"></select>
         <span asp-validation-for="Carrera" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="CorreoInstitucional"></label>
+
+    <div class="mb-3">
+        <label asp-for="CorreoInstitucional" class="form-label"></label>
         <input asp-for="CorreoInstitucional" class="form-control" />
         <span asp-validation-for="CorreoInstitucional" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="Telefono"></label>
+
+    <div class="mb-3">
+        <label asp-for="Telefono" class="form-label"></label>
         <input asp-for="Telefono" class="form-control" />
         <span asp-validation-for="Telefono" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="FechaNacimiento"></label>
+
+    <div class="mb-3">
+        <label asp-for="FechaNacimiento" class="form-label"></label>
         <input asp-for="FechaNacimiento" type="date" class="form-control" />
         <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="Genero"></label>
-        <div>
-            <input type="radio" asp-for="Genero" value="Masculino" /> Masculino
-            <input type="radio" asp-for="Genero" value="Femenino" /> Femenino
-            <input type="radio" asp-for="Genero" value="Otro" /> Otro
-        </div>
+
+    <div class="mb-3">
+        <label asp-for="Genero" class="form-label"></label><br />
+        <input type="radio" asp-for="Genero" value="Masculino" /> Masculino
+        <input type="radio" asp-for="Genero" value="Femenino" /> Femenino
+        <input type="radio" asp-for="Genero" value="Otro" /> Otro
         <span asp-validation-for="Genero" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="Turno"></label>
-        <select asp-for="Turno" class="form-control">
+
+    <div class="mb-3">
+        <label asp-for="Turno" class="form-label"></label>
+        <select asp-for="Turno" class="form-select">
             <option value="">Seleccione</option>
             <option>Mañana</option>
             <option>Tarde</option>
@@ -61,37 +59,36 @@
         </select>
         <span asp-validation-for="Turno" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="TipoIngreso"></label>
-        <select asp-for="TipoIngreso" class="form-control">
+
+    <div class="mb-3">
+        <label asp-for="TipoIngreso" class="form-label"></label>
+        <select asp-for="TipoIngreso" class="form-select">
             <option value="">Seleccione</option>
             <option>Nuevo Ingreso</option>
             <option>Reingreso</option>
         </select>
         <span asp-validation-for="TipoIngreso" class="text-danger"></span>
     </div>
-    <div>
-        <label asp-for="EstaBecado"></label>
-        <input asp-for="EstaBecado" type="checkbox" />
-        <span asp-validation-for="EstaBecado" class="text-danger"></span>
+
+    <div class="form-check mb-3">
+        <input asp-for="EstaBecado" class="form-check-input" />
+        <label asp-for="EstaBecado" class="form-check-label"></label>
     </div>
-    <div>
-        <label asp-for="PorcentajeBeca"></label>
-        <input asp-for="PorcentajeBeca" class="form-control" type="number" min="0" max="100" />
+
+    <div class="mb-3">
+        <label asp-for="PorcentajeBeca" class="form-label"></label>
+        <input asp-for="PorcentajeBeca" type="number" class="form-control" min="0" max="100" />
         <span asp-validation-for="PorcentajeBeca" class="text-danger"></span>
     </div>
-    <div>
-        <input asp-for="TerminosYCondiciones" type="checkbox" />
-        <label asp-for="TerminosYCondiciones">Acepto los términos y condiciones</label>
+
+    <div class="form-check mb-3">
+        <input asp-for="TerminosYCondiciones" class="form-check-input" />
+        <label asp-for="TerminosYCondiciones" class="form-check-label">Acepto Términos y Condiciones</label>
         <span asp-validation-for="TerminosYCondiciones" class="text-danger"></span>
     </div>
-    <div class="row">
-        <div class="col-6">
-            <br />
-            <button type="submit" class="btn btn-primary">Editar</button>
-            <a asp-action="Lista" class="btn btn-secondary">Ir a la lista</a>
-        </div>
-    </div>
+
+    <button type="submit" class="btn btn-primary">Editar</button>
+    <a asp-action="Lista" class="btn btn-secondary">Cancelar</a>
 </form>
 
 @section Scripts {
