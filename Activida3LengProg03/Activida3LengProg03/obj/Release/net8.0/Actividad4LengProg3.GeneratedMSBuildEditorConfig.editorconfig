@@ -26,44 +26,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Eddy Cruz\Desktop\Actividad04LengProg3\Activida3LengProg03\Activida3LengProg03
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Calificaciones/Editar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWZpY2FjaW9uZXNcRWRpdGFyLmNzaHRtbA==
+[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes - Copia/Buscar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXMgLSBDb3BpYVxCdXNjYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Calificaciones/Eliminar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWZpY2FjaW9uZXNcRWxpbWluYXIuY3NodG1s
+[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes - Copia/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXMgLSBDb3BpYVxFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Calificaciones/Lista.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWZpY2FjaW9uZXNcTGlzdGEuY3NodG1s
+[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes - Copia/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXMgLSBDb3BpYVxFbGltaW5hci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Calificaciones/Registrar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsaWZpY2FjaW9uZXNcUmVnaXN0cmFyLmNzaHRtbA==
+[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes - Copia/ExpedienteEstudiante.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXMgLSBDb3BpYVxFeHBlZGllbnRlRXN0dWRpYW50ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes/Buscar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXNcQnVzY2FyLmNzaHRtbA==
+[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes - Copia/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXMgLSBDb3BpYVxMaXN0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes/Editar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXNcRWRpdGFyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes/Eliminar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXNcRWxpbWluYXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes/ExpedienteEstudiante.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXNcRXhwZWRpZW50ZUVzdHVkaWFudGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes/Lista.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXNcTGlzdGEuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes/Registrar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXNcUmVnaXN0cmFyLmNzaHRtbA==
+[C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Estudiantes - Copia/Registrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZXMgLSBDb3BpYVxSZWdpc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Eddy Cruz/Desktop/Actividad04LengProg3/Activida3LengProg03/Activida3LengProg03/Views/Home/Index.cshtml]

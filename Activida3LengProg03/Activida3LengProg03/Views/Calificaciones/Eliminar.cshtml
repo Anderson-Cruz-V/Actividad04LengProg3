@@ -1,0 +1,11 @@
+﻿@model Actividad4LengProg3.Models.Calificacion
+
+<h2>Eliminar Calificación</h2>
+<div class="alert alert-warning">
+	¿Eliminar registro @Model.Id?
+</div>
+<form asp-action="Eliminar" method="post">
+	<input asp-for="Id" type="hidden" />
+	<button type="submit" class="btn btn-danger">Eliminar</button>
+	<a asp-action="Lista" class="btn btn-secondary">Cancelar</a>
+</form>

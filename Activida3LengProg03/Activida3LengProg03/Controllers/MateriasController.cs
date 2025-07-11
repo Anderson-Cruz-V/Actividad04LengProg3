@@ -1,4 +1,4 @@
-﻿// Controllers/MateriasController.cs
+﻿
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

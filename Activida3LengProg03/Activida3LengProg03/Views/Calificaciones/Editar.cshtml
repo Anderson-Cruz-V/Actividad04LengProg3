@@ -1,0 +1,38 @@
+﻿@model Actividad4LengProg3.Models.Calificacion
+
+<h2>Editar Calificación</h2>
+
+<form asp-action="Editar" method="post">
+    <input asp-for="Id" type="hidden" />
+
+    <div class="mb-3">
+        <label asp-for="MatriculaEstudiante" class="form-label"></label>
+        <input asp-for="MatriculaEstudiante" class="form-control" />
+        <span asp-validation-for="MatriculaEstudiante" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CodigoMateria" class="form-label"></label>
+        <input asp-for="CodigoMateria" class="form-control" />
+        <span asp-validation-for="CodigoMateria" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Nota" class="form-label"></label>
+        <input asp-for="Nota" type="number" min="0" max="100" class="form-control" />
+        <span asp-validation-for="Nota" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Periodo" class="form-label"></label>
+        <input asp-for="Periodo" class="form-control" />
+        <span asp-validation-for="Periodo" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Lista" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

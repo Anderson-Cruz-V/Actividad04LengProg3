@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Actividad4LengProg3.Models.Calificacion>
+
+<h4>Lista de Calificaciones</h4>
+<a asp-action="Registrar" class="btn btn-primary mb-3">Nueva Calificación</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Matrícula</th>
+            <th>Materia</th>
+            <th>Nota</th>
+            <th>Periodo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.MatriculaEstudiante</td>
+                <td>@c.CodigoMateria</td>
+                <td>@c.Nota</td>
+                <td>@c.Periodo</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@c.Id" class="btn btn-sm btn-primary">Editar</a>
+                    <a asp-action="Eliminar" asp-route-id="@c.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
